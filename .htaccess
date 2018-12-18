@@ -1,0 +1,26 @@
+RewriteEngine On
+
+Options +MultiViews
+
+RewriteRule ^admin/home$ admin/home.php [NC,L]
+RewriteRule ^admin/category-list$ admin/category-list.php [NC,L]
+RewriteRule ^admin/article-list$ admin/article-list.php [NC,L]
+RewriteRule ^admin/user-list$ admin/users-list.php [NC,L]
+RewriteRule ^admin/comment-list$ admin/comment-list.php [NC,L]
+RewriteRule ^admin/article-add$ admin/articles/add_article.php [NC,L]
+RewriteRule ^admin/articles-pending$ admin/articles/pending_articles.php [NC,L]
+RewriteRule ^admin/insert$ admin/articles/insert.php [NC,L]
+
+RewriteRule ^send-reset-link$ reset_password/get_email.php [NC,L]
+RewriteRule ^password-reset$ reset_password/reset_pass.php [NC,L]
+
+
+RewriteRule ^admin/article-edit-([0-9a-zA-Z_-]+)$ admin/articles/edit_article.php?seo_url=$1 [NC,L]
+RewriteRule ^admin/article-edit-([0-9a-zA-Z_-]+)/update$ admin/articles/update.php?seo_url=$1 [NC,L]
+
+RewriteRule ^post-list-([0-9a-zA-Z_-]+)$ post-list.php?page=$1 [NC,L]
+RewriteRule ^admin/article-list-([0-9a-zA-Z_-]+)$ admin/article-list.php?page=$1 [NC,L]
+RewriteRule ^([0-9a-zA-Z_-]+)$ post.php?seo_url=$1 [NC,L]
+
+RewriteRule ^post-list-([0-9a-zA-Z_-]+)$ post-list.php?page=$1 [NC,L]
+RewriteRule ^search-([0-9a-zA-Z_-]+)$ search.php?q=$1 [NC,L]
